@@ -41,7 +41,7 @@
     </div>
 
     <!--底部 -->
-    <div class="bottom-line">
+    <div class="bottom-line" v-show="showLine">
       <span class="iconfont icon-xiao"></span>
       我是有底线的!
     </div>
@@ -70,6 +70,9 @@ export default {
       categoryList: [],
       // 楼层数据
       floorList: [],
+      // 设置底部显示开关
+      showLine:false,
+      // 返回顶部
       showTop:false
     };
   },
@@ -103,12 +106,18 @@ export default {
       this.floorList = resultList[2].data.message;
     });
   },
+// 上啦触底事件
+  onReachBottom(){
+    // console.log('触发了');
+    this.showLine = true;
+  },
 
+// 点击返回顶部
   onPageScroll(obj){
     if(obj.scrollTop>500){
       this.showTop = true;
     }else{
-      this.scrollTop = false;
+      this.showTop = false; 
     }
   }
 };
