@@ -1,4 +1,6 @@
+
 <script>
+//测试一下
 export default {
   created () {
     // 调用API从本地缓存中获取数据
