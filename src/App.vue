@@ -16,6 +16,7 @@ export default {
 引入字体图标库
 */
 @import url('../static/iconfont.wxss');
+@import url('../static/heifont.wxss');
 .container {
   height: 100%;
   display: flex;

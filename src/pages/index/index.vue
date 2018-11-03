@@ -1,11 +1,6 @@
 <template>
   <div class="index-container">
-    <!-- 头部搜索区域 -->
-    <div class="index_box">
-      <input type="text" placeholder="搜索">
-      <icon type="search" size="20">
-      </icon>
-    </div>
+    <searchBar></searchBar>
 
     <!-- 轮播图区域 -->
     <swiper indicator-dots autoplay circular>
@@ -58,6 +53,8 @@
 <script>
 // 导入模块
 import tools from "../../utils/tools";
+// 导入searchBar
+import searchBar from "../../components/searchBar";
 
 // console.log(tools);
 
@@ -75,6 +72,10 @@ export default {
       // 返回顶部
       showTop:false
     };
+  },
+  // 注册组件
+  components:{
+    searchBar
   },
 
   methods: {
@@ -126,47 +127,15 @@ export default {
 <style scoped lang="scss">
 // 定义UGO红
 $ured: #ff2d4a;
-.index-container{
-  padding-top: 100rpx;
-}
-// 头部搜索区域样式
-.index_box {
-  width: 100%;
-  height: 100rpx;
-  background-color: #ff2d4a;
-  box-sizing: border-box;
-  padding: 20rpx 16rpx;
-  text-align: center;
-  z-index: 998;
-  position: fixed;
-  left: 0;
-  top:0;
-  ._input {
-    width: 100%;
-    height: 60rpx;
-    background-color: white;
-    padding-left: 70rpx;
-    font-size: 24rpx;
-    box-sizing: border-box;
-    border-radius: 10rpx;
-  }
-  icon {
-    position: absolute;
-    left: 48%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
 
 // 轮播图区域样式
 swiper {
-  // padding-top: 100rpx;
+  padding-top: 100rpx;
   ._image {
     width: 100%;
   }
 }
 // 分类区域样式
-
 .category-box {
   width: 100%;
   display: flex;
